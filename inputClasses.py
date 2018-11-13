@@ -4,6 +4,7 @@ import requests as requests
 import re
 import pandas as pd
 import json
+import urllib.request
 # Rotogrinders
 
 #  Draft Kings Player Stats
@@ -75,7 +76,6 @@ class grinder_Team:
 		self.fpts = 0
 
 class grinder_TeamStats:
-
 	def __init__(self):
 		self.teams = []
 
@@ -90,7 +90,7 @@ class grinder_TeamStats:
 
 		for team in stats:
 			
-			t = grinder_Player()
+			t = grinder_Team()
 
 			numGames = team['gp']
 
@@ -114,9 +114,7 @@ class grinder_TeamStats:
 
 # Draftkings Daily Optimizer
 # https://www.rotowire.com/daily/nba/optimizer.php
-class wire_OptimizerStats:
-	
-	class wire_Player:
+class wire_Player:
 		def __init__(self):
 			self.name = ""
 			self.pos = ""
@@ -131,16 +129,32 @@ class wire_OptimizerStats:
 			self.fpts = 0
 			self.val = 0
 
+class wire_OptimizerStats:
 	def __init__(self):
-		self.players =[]
+		self.players = []
 
-	def load_data(self):
+		
+		response = requests.get("https://www.rotowire.com/daily/tables/optimizer-nba.php?sport=NBA&site=FanDuel&projections=&type=main&slate=Main")
+		stats = json.loads(response.text)
+		
+		for player in stats:
+			
+			p = wire_Player()
 
-		response = re.get("https://rotogrinders.com/game-stats/nba-player?site=draftkings&range=season")
-		soup = BeautifulSoup(response.content, "html.parser")
+			p.name = player['player']
+			p.pos = player['position']
+			p.team = player['team']
+			p.opp = player['opponent']
+			p.ml = player['money_line']
+			p.ou = player['over_under']
+			p.sprd = player['point_spread']
+			p.tmp = player['team_points']
+			p.minutes = player['minutes']
+			p.sal = player['salary']
+			p.fpts = player['proj_rotowire']
+			p.val = player['value']
 
-		for x in soup.find_all('"id'):
-
+			self.players.append(p)
 
 # Defense vs Position Stats
 # https://www.rotowire.com/daily/nba/defense-vspos.php?amp%3Bpos=PG&amp%3Bstatview=last10&site=FanDuel
@@ -162,14 +176,33 @@ class wire_DefenseStats:
 			self.ft = 0
 
 	def __init__(self):
-		self.players =[]
+		self.teams =[]
+	
+		response = requests.get("https://www.rotowire.com//daily/tables/defense-vspos-nba.php?sport=NBA&site=DraftKings&projections=&type=main&slate=all&pos=ALL&games=82")
+		stats = json.loads(response.text)
 
-	def load_data(self):
+		 #full table not available from this link. need to login
 
-		response = re.get("https://rotogrinders.com/game-stats/nba-player?site=draftkings&range=season")
-		soup = BeautifulSoup(response.content, "html.parser")
+		'''
+		for player in stats:
+			
+			p = wire_Player()
 
-		for x in soup.find_all('"id'):
+			p.name = player['player']
+			p.pos = player['position']
+			p.team = player['team']
+			p.opp = player['opponent']
+			p.ml = player['money_line']
+			p.ou = player['over_under']
+			p.sprd = player['point_spread']
+			p.tmp = player['team_points']
+			p.minutes = player['minutes']
+			p.sal = player['salary']
+			p.fpts = player['proj_rotowire']
+			p.val = player['value']
+
+			self.players.append(p)'''
+'''		
 # ----------------------------------------
 
 
@@ -243,7 +276,7 @@ class nba_AdvancedStats:
 			self.oreb = 0
 			self.dreb = 0
 			self.red = 0
-			self.to_ratio =0 0 
+			self.to_ratio = 0 
 			self.efg = 0
 			self.ts = 0
 			self.usg = 0
@@ -259,7 +292,6 @@ class nba_AdvancedStats:
 		response = re.get("https://rotogrinders.com/game-stats/nba-player?site=draftkings&range=season")
 		soup = BeautifulSoup(response.content, "html.parser")
 
-		for x in soup.find_all('"id'):
 
 # Players Tracking Touches
 # https://stats.nba.com/players/touches/
@@ -289,7 +321,7 @@ class nba_TouchesStats:
 			self.dws = 0
 			self.ws = 0
 			self.ws48 = 0
-			self.obpm 0
+			self.obpm = 0
 			self.dbpm = 0
 			self.bpm = 0
 			self.vorp = 0
@@ -302,7 +334,6 @@ class nba_TouchesStats:
 		response = re.get("https://rotogrinders.com/game-stats/nba-player?site=draftkings&range=season")
 		soup = BeautifulSoup(response.content, "html.parser")
 
-		for x in soup.find_all('"id'):
 # ----------------------------------------
 
 # Basketball Reference
@@ -342,6 +373,5 @@ class reference_Stats:
 		response = re.get("https://rotogrinders.com/game-stats/nba-player?site=draftkings&range=season")
 		soup = BeautifulSoup(response.content, "html.parser")
 
-		for x in soup.find_all('"id'):
 
 # ----------------------------------------

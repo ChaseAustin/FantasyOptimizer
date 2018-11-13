@@ -3,4 +3,4 @@ import os
 import inputClasses as data
 
 
-x = data.grinder_TeamStats()
+x = data.wire_OptimizerStats()
