@@ -1,0 +1,36 @@
+Instructions to Simulate
+
+
+Everything feeds into roto
+
+
+1. RotoDrop from https://rotogrinders.com/projected-stats/nba-player?site=fanduel
+
+2. TeamStats from https://www.basketball-reference.com/leagues/NBA_2019.html
+	FGA, BLKS, FGM, 3PA
+
+3. Pace from roto https://rotogrinders.com/team-stats/nba-earned?site=fanduel&amp;range=4weeks
+	Only of teams
+	
+
+4. Adv+ from https://www.basketball-reference.com/leagues/NBA_2018_advanced.html
+	DRB%, ORB%, AST%, STL%, BLK%, TOV%, USG%
+
+	from 
+	
+5. Touch from https://stats.nba.com/players/touches/
+	
+	Touch/Min, Min /Touch
+
+6. FGMPlayer from https://rotogrinders.com/game-stats?site=draftkings&sport=nba
+
+
+7. PG, SG, SF, PF, C from https://www.fantasypros.com/daily-fantasy/nba/fanduel-defense-vs-position.php
+	script for each position
+
+8. Fan Duel Salary
+
+
+9. Position Split from https://www.basketball-reference.com/players/j/jamesle01.html
+	each name is different
+
