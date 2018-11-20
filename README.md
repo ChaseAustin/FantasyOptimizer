@@ -11,24 +11,25 @@ I'm Still working on the scripting for each of the classes in scriptingClasses.p
 Roto Grinder Links
 - [x] Class 1
 
-- [] Class 2
+- [ ] Class 2
 
-- [] Class 3
+- [ ] Class 3
 
 
 Basketball Reference Links
-- [] Class 4
+- [ ] Class 4
 
-- [] Class 5
+- [ ] Class 5
 
-- [] Class 6
+- [ ] Class 6
 
 
 Stats Nba Link
-- [] Class 7
+- [ ] Class 7
 
 
 Fantask Pros Link
-- [] Class 8
+- [ ] Class 8
 
-- [x] Class 9
+FanDuel Saleries
+- [] Class 9
