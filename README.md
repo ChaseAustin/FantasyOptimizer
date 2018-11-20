@@ -1,5 +1,5 @@
 # FantasyOptimizer
-Lineup Optimizer for NBA Draft Kings DFS. 
+Lineup Optimizer for NBA FanDuel DFS. 
 
 
 This optimizer works by pulling data from several basketball stats websites. Each of the tables pulled is stored as a class in scriptingClasses.py. The links for every html used are stored in scripting_links.txt
