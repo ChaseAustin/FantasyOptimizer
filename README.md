@@ -32,4 +32,4 @@ Fantask Pros Link
 - [ ] Class 8
 
 FanDuel Saleries
-- [] Class 9
+- [ ] Class 9
