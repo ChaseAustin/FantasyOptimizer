@@ -8,7 +8,7 @@ This optimizer works by pulling data from several basketball stats websites. Eac
 
 
 
-I'm Still working on the scripting for each of the classes in scriptingClasses.py and I will track my progrss here.
+I'm Still working on the scripting for each of the classes in scriptingClasses.py and I will track my progress here.
 
 
 Roto Grinder Links
