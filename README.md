@@ -15,17 +15,18 @@ This project implements a liner regression model from the Sklearn library to pre
 I have plans to try out other Machine learning models in the future including, Ridge Regression, Rendom Forest Regression,a dn Support Vecotr Regression.
 
 
-| Game | Date | | Opponent | Win/Loss |
-| 29 | 12/15/2018 | @ | CHA | W |
-| 30 | 12/16/2018 | @ | CHA | L |
-| 31 | 12/18/2018 | @ | CHA | L |
-| 32 | 12/21/2018 |  | CHA | W |
-| 33 | 12/23/2018 |  | CHA | L |
-| 34 | 12/25/2018 | @ | CHA | W |
-| 35 | 12/27/2018 | @ | CHA | L |
-| 36 | 12/28/2018 |  | CHA | L |
-| 37 | 12/30/2018 |  | CHA | W |
-| 38 | 1/2/2019 |  | CHA | L |
+| Game | Date       |     | Opponent | Win/Loss |
+|:----:|:----------:|:---:|:--------:|:--------:|
+| 29   | 12/15/2018 | @   | CHA      | W        |
+| 30   | 12/16/2018 | @   | CHA      | L        |
+| 31   | 12/18/2018 | @   | CHA      | L        |
+| 32   | 12/21/2018 |     | CHA      | W        |
+| 33   | 12/23/2018 |     | CHA      | L        |
+| 34   | 12/25/2018 | @   | CHA      | W        |
+| 35   | 12/27/2018 | @   | CHA      | L        |
+| 36   | 12/28/2018 |     | CHA      | L        |
+| 37   | 12/30/2018 |     | CHA      | W        |
+| 38   | 1/2/2019   |     | CHA      | L        |
 
 With better ways to retireve and clense data, this model can be applied to each player for each game in and NBA season.
 In the future, I have plans to create web-scraping scripts to pull the data I use and store it in a database for every player and every game. I also want to setup a rest-api so that other developers can use this data
